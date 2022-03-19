@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
@@ -64,8 +65,12 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 Log.i(TAG,description);
+                if (photoFile == null ||ivPostImage.getDrawable() == null){
+                    Toast.makeText(MainActivity.this,"Need an Image!",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 ParseUser currentUser = ParseUser.getCurrentUser();
-                savePost(description,currentUser);
+                savePost(description,currentUser,photoFile);
             }
         });
     }
@@ -116,10 +121,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private void savePost(String description, ParseUser currentUser) {
+    private void savePost(String description, ParseUser currentUser, File photoFile) {
         Post post = new Post();
         post.setDescription(description);
         post.setUer(currentUser);
+        post.setImage(new ParseFile(photoFile));
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -129,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Log.i(TAG,"Post save was successful");
                 etDescription.setText("");
+                ivPostImage.setImageResource(0);
             }
         });
     }
