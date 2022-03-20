@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:showDividers="none"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:lineSpacingExtra="12sp"
-        android:text="Login"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/tvSetup"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Setup"
+        android:textColor="#0C0C0C"
+        android:textSize="34sp" />
 
     <EditText
-        android:id="@+id/etUserName"
+        android:id="@+id/etUserName2"
+        tool:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="4dp"
-        android:ems="10"
 
+        android:ems="10"
         android:hint="User Name"
         android:layerType="none"
         android:layoutDirection="rtl"
@@ -36,11 +30,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvtitle"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toBottomOf="@id/tvtitle" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPassword2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -53,18 +46,14 @@
         app:layout_constraintTop_toBottomOf="@+id/etUserName" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        android:text="Create User" />
 
     <Button
-        android:id="@+id/btnSetup"
+        android:id="@+id/btnToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Setup User" />
-
+        android:text="Go Back to Login" />
 </LinearLayout>

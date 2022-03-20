@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.LogInCallback;
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUserName;
     private EditText etPassword;
     private Button btnLogin;
+    private Button btnSetup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,16 @@ public class LoginActivity extends AppCompatActivity {
         etUserName = findViewById(R.id.etUserName);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnSetup = findViewById(R.id.btnSetup);
+
+        btnSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG,"Go to Setup Page");
+                goSetupPage();
+            }
+        });
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +55,12 @@ public class LoginActivity extends AppCompatActivity {
                 loginUser(username,password);
             }
         });
+    }
+
+    private void goSetupPage() {
+        Intent i =new Intent(this,SetupActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void loginUser(String username, String password) {

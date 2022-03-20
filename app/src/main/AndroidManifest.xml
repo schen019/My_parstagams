@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.suyi.my_parstagams">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,15 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.My_parstagams">
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.codepath.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/fileprovider" />
-        </provider>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -32,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SetupActivity"></activity>
         <activity android:name=".MainActivity"></activity>
     </application>
 

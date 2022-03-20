@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ParseUser.logOut();
-                ParseUser currentUser = ParseUser.getCurrentUser();
+                finish();
             }
         });
 
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void done(List<Post> posts, ParseException e) {
                 if (e != null) {
-                    Log.e(TAG, "Issue with getting posts, e");
+                    Log.e(TAG, "Issue with getting posts",e);
                     return;
                 }
                 for (Post post : posts) {
