@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         // wrap File object into a content provider
         // required for API >= 24
         // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
-        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.r", photoFile);
+        Uri fileProvider = FileProvider.getUriForFile(MainActivity.this, "com.suyi.my_parstagams", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
         // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
         // So as long as the result is not null, it's safe to use the intent.
