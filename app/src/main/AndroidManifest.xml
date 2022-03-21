@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.suyi.my_parstagams">
-
+    package="com.suyi.my_parstagams"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ParseApplication"
@@ -15,7 +17,7 @@
         android:theme="@style/Theme.My_parstagams">
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.codepath.fileprovider"
+            android:authorities="com.suyi.my_parstagams"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
