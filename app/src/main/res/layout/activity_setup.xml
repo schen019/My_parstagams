@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tool="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:textAlignment="textEnd">
 
     <TextView
         android:id="@+id/tvSetup"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:text="Setup"
-        android:textColor="#0C0C0C"
+        android:textColor="#E91E63"
+        android:textDirection="locale"
         android:textSize="34sp" />
 
     <EditText
         android:id="@+id/etUserName2"
-        tool:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="4dp"
-
         android:ems="10"
+
         android:hint="User Name"
         android:layerType="none"
         android:layoutDirection="rtl"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvtitle" />
+        app:layout_constraintTop_toBottomOf="@id/tvtitle"
+        tool:visibility="visible" />
 
     <EditText
         android:id="@+id/etPassword2"
@@ -49,11 +51,13 @@
         android:id="@+id/btnCreate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E91E63"
         android:text="Create User" />
 
     <Button
         android:id="@+id/btnToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FF5722"
         android:text="Go Back to Login" />
 </LinearLayout>
